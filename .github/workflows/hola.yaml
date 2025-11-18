@@ -1,0 +1,17 @@
+name: Ejecutar script hola
+on:
+ push:
+ 
+ jobs:
+    ejecutar-hola:
+      runs_on: ubuntu-latest
+      
+      steps:
+        - name: Checkout del repositorio
+          uses: actions/checkout@v5
+          
+        - name: dar permisos de ejecución
+          run: chmod +x src/hola.sh
+        
+        - name: Ejecutar script
+          run: ./src/hola.sh
